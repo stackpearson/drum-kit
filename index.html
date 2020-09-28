@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Drum Kit</title>
+    <link rel='stylesheet' type='text/css' href='./index.css' />
+</head>
+<body>
+    <div class="drum-container">
+        <div data-key='65' class='sound-trigger'>
+            <kbd>A</kbd>
+        </div>
+        <div data-key='83' class='sound-trigger'>
+            <kbd>S</kbd>
+        </div>
+        <div data-key='68' class='sound-trigger'>
+            <kbd>D</kbd>
+        </div>
+        <div data-key='70' class='sound-trigger'>
+            <kbd>F</kbd>
+        </div>
+        <div data-key='71' class='sound-trigger'>
+            <kbd>G</kbd>
+        </div>
+        <div data-key='72' class='sound-trigger'>
+            <kbd>H</kbd>
+        </div>
+        <div data-key='74' class='sound-trigger'>
+            <kbd>J</kbd>
+        </div>
+        <div data-key='75' class='sound-trigger'>
+            <kbd>K</kbd>
+        </div>
+        <div data-key='76' class='sound-trigger'>
+            <kbd>L</kbd>
+        </div>
+    </div>
+
+    <audio data-key="65" src='samples/BDRUM13.aif'></audio>
+    <audio data-key='83' src=''></audio>
+    <audio data-key='68' src=''></audio>
+    <audio data-key='70' src=''></audio>
+    <audio data-key='71' src=''></audio>
+    <audio data-key='72' src=''></audio>
+    <audio data-key='74' src=''></audio>
+    <audio data-key='75' src=''></audio>
+    <audio data-key='76' src=''></audio>
+
+    <script>
+        window.addEventListener('keydown', function(e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            if(!audio) return;
+            audio.play();
+        });
+    </script>
+
+</body>
+</html>

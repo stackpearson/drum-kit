@@ -9,48 +9,58 @@
 <body>
     <div class="drum-container">
         <div data-key='65' class='sound-trigger'>
-            <kbd>A</kbd>
+            <kbd><p class='sound-key'>A</p></kbd>
+            <span class="sound-description">Kick</span>
         </div>
         <div data-key='83' class='sound-trigger'>
-            <kbd>S</kbd>
+            <kbd><p class='sound-key'>S</p></kbd>
+            <span class="sound-description">Cowbell</span>
         </div>
         <div data-key='68' class='sound-trigger'>
-            <kbd>D</kbd>
+            <kbd><p class='sound-key'>D</p></kbd>
+            <span class="sound-description">Crash</span>
         </div>
         <div data-key='70' class='sound-trigger'>
-            <kbd>F</kbd>
+            <kbd><p class='sound-key'>F</p></kbd>
+            <span class="sound-description">Snare</span>
         </div>
         <div data-key='71' class='sound-trigger'>
-            <kbd>G</kbd>
+            <kbd><p class='sound-key'>G</p></kbd>
+            <span class="sound-description">High Hat<br>(closed)</span>
         </div>
         <div data-key='72' class='sound-trigger'>
-            <kbd>H</kbd>
+            <kbd><p class='sound-key'>H</p></kbd>
+            <span class="sound-description">High Hat<br>(open)</span>
         </div>
         <div data-key='74' class='sound-trigger'>
-            <kbd>J</kbd>
+            <kbd><p class='sound-key'>J</p></kbd>
+            <span class="sound-description">Ride</span>
         </div>
         <div data-key='75' class='sound-trigger'>
-            <kbd>K</kbd>
+            <kbd><p class='sound-key'>K</p></kbd>
+            <span class="sound-description">Tom<br>(low)</span>
         </div>
         <div data-key='76' class='sound-trigger'>
-            <kbd>L</kbd>
+            <kbd><p class='sound-key'>L</p></kbd>
+            <span class="sound-description">Tom<br>(high)</span>
         </div>
     </div>
 
-    <audio data-key="65" src='samples/BDRUM13.aif'></audio>
-    <audio data-key='83' src=''></audio>
-    <audio data-key='68' src=''></audio>
-    <audio data-key='70' src=''></audio>
-    <audio data-key='71' src=''></audio>
-    <audio data-key='72' src=''></audio>
-    <audio data-key='74' src=''></audio>
-    <audio data-key='75' src=''></audio>
-    <audio data-key='76' src=''></audio>
+    <audio data-key="65" src='drum-samples/BDRUM13.wav'></audio>
+    <audio data-key='83' src='drum-samples/COWBELL1.wav'></audio>
+    <audio data-key='68' src='drum-samples/CRASH.wav'></audio>
+    <audio data-key='70' src='drum-samples/SNARE2.wav'></audio>
+    <audio data-key='71' src='drum-samples/HHCLOSE2.wav'></audio>
+    <audio data-key='72' src='drum-samples/HHOPEN1.wav'></audio>
+    <audio data-key='74' src='drum-samples/RIDE.wav'></audio>
+    <audio data-key='75' src='drum-samples/TOMMID5.wav'></audio>
+    <audio data-key='76' src='drum-samples/TOMHI5.wav'></audio>
 
     <script>
         window.addEventListener('keydown', function(e) {
             const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
             if(!audio) return;
+            audio.currentTime = 0;
             audio.play();
         });
     </script>
